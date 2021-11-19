@@ -47,9 +47,9 @@ Consiste em posicionar sensores em locais estratégicos para coletar informaçõ
 
 2. **Clone o repositório em sua máquina**
 
-```
-git clone https://github.com/RaykRocha/ps-IoT.git
-```
+    ```
+    git clone https://github.com/RaykRocha/ps-IoT.git
+    ```
 3. **SimulIDE**
 
     No SimulIDE importe os arquivos .simu e .ino, compilar, fazer o upload e ativar o circuito.
