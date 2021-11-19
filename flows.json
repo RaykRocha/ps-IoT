@@ -1,0 +1,675 @@
+[
+    {
+        "id": "b4a90a4fd174455f",
+        "type": "tab",
+        "label": "PS IoT Arduino",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e97817473792b9a",
+        "type": "serial in",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "serial": "837cc547ee1f98e2",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "760ab6763f591361"
+            ]
+        ]
+    },
+    {
+        "id": "760ab6763f591361",
+        "type": "json",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "209526d2c668d575",
+                "778368e331f7c1c9",
+                "d4948afe1fa75e35"
+            ]
+        ]
+    },
+    {
+        "id": "209526d2c668d575",
+        "type": "change",
+        "z": "b4a90a4fd174455f",
+        "name": "temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 100,
+        "wires": [
+            [
+                "8c5db4747bde77e6"
+            ]
+        ]
+    },
+    {
+        "id": "778368e331f7c1c9",
+        "type": "change",
+        "z": "b4a90a4fd174455f",
+        "name": "ph",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ph",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "7fd309ac08bd19ce"
+            ]
+        ]
+    },
+    {
+        "id": "d4948afe1fa75e35",
+        "type": "change",
+        "z": "b4a90a4fd174455f",
+        "name": "turbidez",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.turbidez",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 280,
+        "wires": [
+            [
+                "855bf281ae94276a"
+            ]
+        ]
+    },
+    {
+        "id": "8c5db4747bde77e6",
+        "type": "mqtt out",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/temperatura",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b031f8d25b879e22",
+        "x": 700,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7fd309ac08bd19ce",
+        "type": "mqtt out",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/ph",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b031f8d25b879e22",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "855bf281ae94276a",
+        "type": "mqtt out",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/turbidez",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b031f8d25b879e22",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "195ae8229f55d73c",
+        "type": "mqtt out",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/alarme",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b031f8d25b879e22",
+        "x": 440,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "fa22a181a8a9f7fc",
+        "type": "mqtt in",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/alarme",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b031f8d25b879e22",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 860,
+        "wires": [
+            [
+                "4ae5b5a9c8d66b19"
+            ]
+        ]
+    },
+    {
+        "id": "a971bfe6d0bb2f99",
+        "type": "ui_text",
+        "z": "b4a90a4fd174455f",
+        "group": "66ed0d1723a4bff5",
+        "order": 2,
+        "width": "4",
+        "height": "4",
+        "name": "text",
+        "label": "Com o switch ligado, um tópico do MQTT é acionado, o LED no arduino é ligado e uma publicação no twitter é feita.",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 170,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f87415341fd14a97",
+        "type": "serial out",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "serial": "837cc547ee1f98e2",
+        "x": 610,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "e43ebfa0a61363fd",
+        "type": "ui_switch",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "label": "Alarme",
+        "tooltip": "",
+        "group": "66ed0d1723a4bff5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 760,
+        "wires": [
+            [
+                "195ae8229f55d73c"
+            ]
+        ]
+    },
+    {
+        "id": "4ae5b5a9c8d66b19",
+        "type": "function",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "func": "msg.payload = (msg.payload === \"true\")  ?  1  :  0\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 860,
+        "wires": [
+            [
+                "f87415341fd14a97",
+                "278a662055520609"
+            ]
+        ]
+    },
+    {
+        "id": "4f1a82da05e00206",
+        "type": "twitter out",
+        "z": "b4a90a4fd174455f",
+        "twitter": "",
+        "name": "",
+        "x": 1300,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "278a662055520609",
+        "type": "switch",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 960,
+        "wires": [
+            [
+                "eec036e0e4671511"
+            ]
+        ]
+    },
+    {
+        "id": "e94d5d9a56b48acc",
+        "type": "function",
+        "z": "b4a90a4fd174455f",
+        "name": "tweet",
+        "func": "var array = msg.payload[0]; //get element zero of your data\nvar arr = []; //a new array for populating results\n\nfor(let prop in array) {\n  arr.push(array[prop]);\n}\nvar out = \"O Alarme foi acionado!\";\nout += \" - Temperatura: \"+ arr[0] + \"ºC\";\nout += \" - pH: \"+ arr[1];\nout += \" - Turbidez: \"+ arr[2] + \"NTu\";\nmsg.payload = out;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 840,
+        "wires": [
+            [
+                "4f1a82da05e00206"
+            ]
+        ]
+    },
+    {
+        "id": "2f65722dfef29e69",
+        "type": "mqtt in",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/temperatura",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b031f8d25b879e22",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "495e2eba282634f4",
+                "0ca2ca9479023e4f"
+            ]
+        ]
+    },
+    {
+        "id": "6851a2fb96a504cb",
+        "type": "mqtt in",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/ph",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b031f8d25b879e22",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "c76d28c0645f2159",
+                "0ca2ca9479023e4f"
+            ]
+        ]
+    },
+    {
+        "id": "76e7351f7310ba39",
+        "type": "mqtt in",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "topic": "rayk/fiap/ps-iot/turbidez",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "b031f8d25b879e22",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 560,
+        "wires": [
+            [
+                "304b741b323cb058",
+                "0ca2ca9479023e4f"
+            ]
+        ]
+    },
+    {
+        "id": "495e2eba282634f4",
+        "type": "ui_gauge",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "group": "de506f1.15b179",
+        "order": 1,
+        "width": "4",
+        "height": "4",
+        "gtype": "compass",
+        "title": "Temperatura",
+        "label": "Celsius",
+        "format": "{{value|number:1}}°C",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b0b3",
+            "#e2e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 510,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c76d28c0645f2159",
+        "type": "ui_gauge",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "group": "de506f1.15b179",
+        "order": 2,
+        "width": "4",
+        "height": "4",
+        "gtype": "donut",
+        "title": "pH",
+        "label": "pH",
+        "format": "{{value|number:1}}",
+        "min": "0",
+        "max": "14",
+        "colors": [
+            "#ff0000",
+            "#11ff00",
+            "#5900ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 490,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "304b741b323cb058",
+        "type": "ui_gauge",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "group": "de506f1.15b179",
+        "order": 3,
+        "width": "5",
+        "height": "5",
+        "gtype": "gage",
+        "title": "Turbidez",
+        "label": "Ntu",
+        "format": "{{value|number:0}}",
+        "min": "0",
+        "max": "1500",
+        "colors": [
+            "#33bbff",
+            "#7eff42",
+            "#ff0073"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 500,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b9fbbd0bfbfcfd88",
+        "type": "mysql",
+        "z": "b4a90a4fd174455f",
+        "mydb": "2f610664486be3f6",
+        "name": "",
+        "x": 760,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "607128043a4e7a57",
+        "type": "function",
+        "z": "b4a90a4fd174455f",
+        "name": "query",
+        "func": "var out = \"INSERT INTO dados_coletados (data,temperatura,ph,turbidez)\"\nout += \"VALUES ('\" + new Date().toISOString() + \"','\" \nout += msg.payload[0] + \"','\" + msg.payload[1] + \"','\" + msg.payload[2] + \"');\"\n    \nmsg.topic=out;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 640,
+        "wires": [
+            [
+                "b9fbbd0bfbfcfd88"
+            ]
+        ]
+    },
+    {
+        "id": "0ca2ca9479023e4f",
+        "type": "join",
+        "z": "b4a90a4fd174455f",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 490,
+        "y": 640,
+        "wires": [
+            [
+                "607128043a4e7a57"
+            ]
+        ]
+    },
+    {
+        "id": "b6046217fc986626",
+        "type": "mysql",
+        "z": "b4a90a4fd174455f",
+        "mydb": "2f610664486be3f6",
+        "name": "",
+        "x": 940,
+        "y": 960,
+        "wires": [
+            [
+                "e94d5d9a56b48acc"
+            ]
+        ]
+    },
+    {
+        "id": "eec036e0e4671511",
+        "type": "function",
+        "z": "b4a90a4fd174455f",
+        "name": "query",
+        "func": "msg.topic = \"SELECT temperatura, ph, turbidez FROM dados_coletados ORDER BY id DESC LIMIT 1\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 960,
+        "wires": [
+            [
+                "b6046217fc986626"
+            ]
+        ]
+    },
+    {
+        "id": "837cc547ee1f98e2",
+        "type": "serial-port",
+        "serialport": "COM2",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "b031f8d25b879e22",
+        "type": "mqtt-broker",
+        "name": "Servidor MTQQ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "66ed0d1723a4bff5",
+        "type": "ui_group",
+        "name": "Botão",
+        "tab": "db76abd1.99a188",
+        "order": 2,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "de506f1.15b179",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "db76abd1.99a188",
+        "order": 1,
+        "disp": true,
+        "width": "13",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2f610664486be3f6",
+        "type": "MySQLdatabase",
+        "name": "mysql-node-red",
+        "host": "localhost",
+        "port": "3306",
+        "db": "node-red",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "db76abd1.99a188",
+        "type": "ui_tab",
+        "name": "Monitoramento da qualidade da água ",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
